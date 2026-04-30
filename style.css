@@ -1,0 +1,238 @@
+
+.card .trigger {
+    position: relative;
+    box-shadow: 0px 8px 16px rgba(255,0,0,0.15);
+    border-radius: 22px;
+}
+
+.card .trigger span {
+    font-weight: 500;
+    letter-spacing: 0px;
+    font-size: 16px;
+    position: relative;
+    background-color: #f0f2f5;
+    color: #555;
+    display: block;
+    min-width: 0px;
+    padding: 0 18px;
+    z-index: 1;
+    cursor: pointer;
+    border-radius: 22px;
+    transition: 350ms border 700ms, 700ms color 700ms, 350ms min-width 700ms;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.card .trigger span em {
+    font-style:normal;
+    margin-right: 5px;
+    transform-origin: bottom;
+    animation: 700ms waving infinite;
+    
+}
+
+.card .trigger ul.locations {
+    position: absolute;
+    list-style:none;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    border-radius: 0 0 22px 22px;
+    font-size: 14px;
+    overflow: hidden;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: 350ms transform 350ms;
+
+}
+
+.card .trigger ul.locations a {
+    opacity: 0;
+    transition:350ms opacity 0ms;
+}
+
+.card .trigger ul.locations li{
+    top: 0;
+    left: 0;
+    width: 220px;
+    height: 44px;
+    padding: 0 20px;
+    z-index: 0;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: flex-start;
+    border-left: 0px solid #eee;
+    transition: 200ms border-left 0ms;
+}
+
+.card .trigger ul.locations li::before {
+    content:"";
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(to right,#eee,#f0f2f5);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.card .trigger ul.locations li:last-of-type {
+    border-radius: 0 0 22px 22px;
+}
+
+.card .trigger ul.locations li a {
+    text-decoration: none;
+    color: black;
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.card .trigger ul.locations li:hover {
+    border-left: 10 px solid #eee;
+}
+
+.card .trigger:hover span em{
+    min-width: 220px;
+    border-radius: 22px 22px 0 0 ;
+    transition: 350ms border-radius 0ms, 700ms color 700ms, 350ms min-width 0ms;
+    color: #ccc;
+}
+
+.card .trigger:hover ul.locations {
+    transform: scaleY(1);
+    transition: 350ms transform 350ms;
+}
+
+.card .trigger:hover ul.locations a {
+    opacity: 1;
+    transition: 350ms opacity 700ms;
+}
+
+html{
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body {
+    font-family: "Sour Gummy", sans-serif;
+    margin: 0;
+    display: flex;
+    height: 100vh;
+    background: #f0f2f5;
+    color: #333;
+}
+
+.sidebar {
+    width: 220px;
+    background: #2d1b4e;
+    color: #fff;
+    padding: 20px 0;
+    position: fixed;
+    height: 100vh;
+    display: inline;
+    flex-direction: column;
+    border-radius: 10px;
+}
+
+.logo {
+    font-size: 1.3rem;
+    font-weight: 700;
+    padding: 0 20px 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.sidebar nav { display: flex; flex-direction: column; margin-top: 20px; }
+
+.nav-item {
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    padding: 12px 20px;
+    transition: all 0.2s;
+    font-size: 0.95rem;
+}
+
+.nav-item:hover, .nav-item.active {
+    background: rgba(255,255,255,0.1);
+    color: #fff;
+}
+
+.main {
+    margin-left: 220px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.topbar {
+    background: #fff;
+    padding: 16px 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e4e6ea;
+}
+
+.page-title { margin: 0; font-size: 1.2rem; }
+
+.user-info { font-size: 0.9rem; color: #666; }
+
+.content { padding: 24px 28px; }
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.card-label { font-size: 0.85rem; color: #888; }
+
+.card-value { font-size: 1.3rem; font-weight: 700; color: #2d1b4e; text-decoration: none;}
+
+.panels {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 16px;
+}
+
+.panel {
+    background: #fff;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    min-height: 280px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #bbb;
+    font-size: 1rem;
+}
