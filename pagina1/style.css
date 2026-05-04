@@ -1,0 +1,12 @@
+body {
+    color: rgb(17, 17, 17)000;
+    background-color:  #ffffff;
+    border-radius: 22px;
+    align-items: center;
+    text-align: center;
+}
+
+form{
+    display: inline-grid;
+    border-radius: 22px;
+}
