@@ -33,6 +33,7 @@
     
 }
 
+
 .module .trigger ul.locations {
     position: absolute;
     list-style:none;
@@ -67,6 +68,7 @@
     justify-content: flex-start;
     border-left: 0px solid #eee;
     transition: 200ms border-left 0ms;
+    border-radius: 10px;
 }
 
 .module .trigger ul.locations li::before {
@@ -213,6 +215,9 @@ body {
     gap: 8px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.06);
 }
+
+.card:hover{transform: scale(1.1);}
+
 
 .card-label { font-size: 0.85rem; color: #888; }
 
